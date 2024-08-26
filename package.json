@@ -1,0 +1,25 @@
+{
+  "name": "developerhub",
+  "version": "1.0.0",
+  "description": "developer hub application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm run dev --prefix client",
+    "both": "concurrently \"npm run server\" \" npm run client\" "
+  },
+  "author": "Mahi",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "developerhub": "file:",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.4"
+  }
+}
