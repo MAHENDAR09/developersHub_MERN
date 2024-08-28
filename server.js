@@ -22,7 +22,7 @@ mongoose.connect("mongodb+srv://mahendar:mahendar12@cluster0.ujf60.mongodb.net/?
 // })
 app.use(express.static(path.join(__dirname, 'client')));
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', '/components/App.jsx'));
 });
 
 
