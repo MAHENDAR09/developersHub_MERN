@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const middleware = require('./middleware');
 const reviewmodel = require('./reviewmodel');
 const cors = require('cors');
+const path = require('path');
 const app = express();
 
 
@@ -19,8 +20,7 @@ mongoose.connect("mongodb+srv://mahendar:mahendar12@cluster0.ujf60.mongodb.net/?
 // app.get ('/' , (req,res) => {
 //     return res.send("Server Running......")
 // })
-
-app.use(express.static('client/build'));
+app.use(express.static(path.join(__dirname, 'client')));
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'index.html'));
 });
