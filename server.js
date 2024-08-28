@@ -7,6 +7,7 @@ const reviewmodel = require('./reviewmodel');
 const cors = require('cors');
 const app = express();
 
+
 app.use(express.json());
 app.use(cors ({origin : '*'}));
 
@@ -15,9 +16,14 @@ mongoose.connect("mongodb+srv://mahendar:mahendar12@cluster0.ujf60.mongodb.net/?
 ()=> console.log("DB Connected....... ")
 ) 
 
-app.get ('/' , (req,res) => {
-    return res.send("Server Running......")
-})
+// app.get ('/' , (req,res) => {
+//     return res.send("Server Running......")
+// })
+
+app.use(express.static('client/build'));
+app.get('/*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'index.html'));
+});
 
 
 app.post('/register',async (req,res)=> {
